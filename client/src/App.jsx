@@ -23,6 +23,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <nav className="navbar navbar-light bg-primary mb-3">
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            <img src="/logo192.png" alt="" />
+          </a>
+        </div>
+      </nav>
       <Perguntas />
       <p className="App-intro">{response ? response : ""}</p>
     </div>

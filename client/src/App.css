@@ -1,3 +1,8 @@
 body {
   background-color: #eceff1;
+  /* padding: 15px; */
+}
+
+.navbar img {
+  max-width: 50px;
 }

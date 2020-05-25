@@ -8,26 +8,30 @@ const Perguntas = () => (
       </div>
 
       <div className="card-body">
-        <form action="">
+        <form action="/api/savequest" method="post">
           <div className="form-row">
             <div className="col-md-12">
               <div className="form-group">
-                <label htmlFor="">Título</label>
+                <label htmlFor="titulo">Título</label>
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Título"
+                  name="titulo"
+                  id="titulo"
                 />
               </div>
             </div>
             <div className="col-md-12">
               <div className="form-group">
-                <label htmlFor="">Descrição</label>
+                <label htmlFor="descricao">Descrição</label>
                 <textarea
                   className="form-control"
                   placeholder="Descreva sua pergunta aqui"
                   cols="30"
                   rows="5"
+                  name="descricao"
+                  id="descricao"
                 ></textarea>
               </div>
             </div>
