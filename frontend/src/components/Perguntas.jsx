@@ -8,7 +8,7 @@ const Perguntas = () => (
       </div>
 
       <div className="card-body">
-        <form action="/api/savequest" method="post">
+        <form action="http://localhost:5000/savequest" method="post">
           <div className="form-row">
             <div className="col-md-12">
               <div className="form-group">
