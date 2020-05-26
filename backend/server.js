@@ -22,7 +22,10 @@ connection.authenticate()
   })
 
 app.get('/', (req, res) => {
-  res.send({ message: "Hello World" })
+  Question.findAll({ raw: true }).then(questions => {
+    res.send(questions);
+  });
+  // res.send({ message: "Hello World" })
 });
 
 app.post('/savequest', (req, res) => {
@@ -33,7 +36,7 @@ app.post('/savequest', (req, res) => {
     description
   }).then(() => {
     res.send(`Form recebido! Título: ${title}, Descrição: ${description}`);
-    res.redirect("http://localhost:3000")
+    // res.redirect("http://localhost:3000")
   })
 });
 

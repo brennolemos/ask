@@ -1,6 +1,6 @@
 import React from "react";
 
-const Perguntas = () => (
+const QuestionForm = () => (
   <div className="container">
     <div className="card">
       <div className="card-header">
@@ -43,4 +43,4 @@ const Perguntas = () => (
   </div>
 );
 
-export default Perguntas;
+export default QuestionForm;
