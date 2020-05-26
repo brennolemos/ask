@@ -9,14 +9,15 @@ const App = () => {
 
   useEffect(() => {
     callApi()
-      .then((res) => setResponse(res.express))
+      .then((res) => setResponse(res.message))
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   const callApi = async () => {
-    const response = await fetch("/api");
+    const response = await fetch("http://localhost:5000");
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
+    // console.log(response)
 
     return body;
   };
