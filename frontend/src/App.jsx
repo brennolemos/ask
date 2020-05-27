@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Question from "./components/Question";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import QuestionList from "./components/QuestionList";
 import QuestionForm from "./components/QuestionForm";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     callApi()
-      .then((res) => setResponse(res.message))
+      .then((res) => setResponse(res))
       .catch((err) => console.log(err));
   });
 
@@ -29,14 +29,14 @@ const App = () => {
       <div className="App">
         <nav className="navbar navbar-light bg-primary mb-3">
           <div className="container">
-            <a className="navbar-brand" href="/">
-              <img src="/logo192.png" alt="" />
-            </a>
+            <Link to="/" className="navbar-brand">
+              <h2 className="text-white">ASK</h2>
+            </Link>
           </div>
         </nav>
         <Switch>
           <Route path="/" exact>
-            <Question />
+            {response ? <QuestionList questions={response} /> : ""}
           </Route>
           <Route path="/savequest" component={QuestionForm} />
         </Switch>
