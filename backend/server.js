@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 const connection = require("./database/database");
 const Question = require("./database/Question");
+const Answer = require("./database/Answer");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
