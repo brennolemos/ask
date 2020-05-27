@@ -8,7 +8,7 @@ const QuestionForm = () => (
       </div>
 
       <div className="card-body">
-        <form action="http://localhost:5000/savequest" method="post">
+        <form action="http://localhost:5000/to-ask" method="post">
           <div className="form-row">
             <div className="col-md-12">
               <div className="form-group">

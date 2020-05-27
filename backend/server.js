@@ -36,7 +36,7 @@ app.get("/question/:id", (req, res) => {
   })
 });
 
-app.post('/savequest', (req, res) => {
+app.post('/to-ask', (req, res) => {
   const title = req.body.titulo;
   const description = req.body.descricao;
   Question.create({

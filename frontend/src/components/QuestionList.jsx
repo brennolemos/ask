@@ -5,18 +5,18 @@ const QuestionList = (props) => (
   <div className="container">
     <div className="d-flex justify-content-between align-items-center">
       <h1>Questions</h1>
-      <Link to="/question" className="btn btn-primary">
+      <Link to="/to-ask" className="btn btn-primary">
         Perguntar
       </Link>
     </div>
     <hr />
-    {props.questions.map((question) => (
-      <div className="card my-3">
+    {props.questions.map((question, index) => (
+      <div className="card my-3" key={index}>
         <div className="card-body">
           <h3>{question.title}</h3>
         </div>
         <div className="card-footer">
-          <button className="btn btn-primary">Responder</button>
+          <Link to={`/question/${question.id}`} className="btn btn-primary">Responder</Link>
         </div>
       </div>
     ))}

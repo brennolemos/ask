@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import QuestionList from "./components/QuestionList";
 import QuestionForm from "./components/QuestionForm";
+import Question from "./components/Question";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -38,7 +39,8 @@ const App = () => {
           <Route path="/" exact>
             {response ? <QuestionList questions={response} /> : ""}
           </Route>
-          <Route path="/question" component={QuestionForm} />
+          <Route path="/to-ask" component={QuestionForm} />
+          <Route path="/question/:id" component={Question} />
         </Switch>
       </div>
     </BrowserRouter>
