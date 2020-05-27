@@ -38,7 +38,7 @@ const App = () => {
           <Route path="/" exact>
             {response ? <QuestionList questions={response} /> : ""}
           </Route>
-          <Route path="/savequest" component={QuestionForm} />
+          <Route path="/question" component={QuestionForm} />
         </Switch>
       </div>
     </BrowserRouter>

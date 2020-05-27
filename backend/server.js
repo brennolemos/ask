@@ -27,6 +27,15 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get("/question/:id", (req, res) => {
+  let id = req.params.id;
+  Question.findOne({
+    where: { id: id }
+  }).then(question => {
+    question ? res.send(question) : res.send("Pergunta não encontrada");
+  })
+});
+
 app.post('/savequest', (req, res) => {
   const title = req.body.titulo;
   const description = req.body.descricao;

@@ -5,7 +5,7 @@ const QuestionList = (props) => (
   <div className="container">
     <div className="d-flex justify-content-between align-items-center">
       <h1>Questions</h1>
-      <Link to="/savequest" className="btn btn-primary">
+      <Link to="/question" className="btn btn-primary">
         Perguntar
       </Link>
     </div>
