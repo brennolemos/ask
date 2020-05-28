@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AnswerForm from "./AnswerForm";
+import AnswerList from "./AnswerList";
 
 const Question = (props) => {
   const id = props.match.params.id;
@@ -13,9 +14,10 @@ const Question = (props) => {
 
   return (
     <div className="container">
-      <h1>{response && response.title}</h1>
-      <p>{response && response.description}</p>
+      <h1>{response && response.question.title}</h1>
+      <p>{response && response.question.description}</p>
       <hr />
+      {response ? <AnswerList answers={response.answers} /> : ""}
       <AnswerForm question={id} />
     </div>
   );

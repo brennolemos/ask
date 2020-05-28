@@ -33,7 +33,16 @@ app.get("/question/:id", (req, res) => {
   Question.findOne({
     where: { id: id }
   }).then(question => {
-    question ? res.send(question) : res.send("Pergunta não encontrada");
+    if (question != undefined) {
+      Answer.findAll({
+        where: { questionId: question.id },
+        order: [['id','DESC']]
+      }).then(answers => {
+        res.send({ question, answers });
+      })
+    } else {
+      res.send("Pergunta não encontrada")
+    }
   })
 });
 
