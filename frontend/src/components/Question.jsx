@@ -16,7 +16,7 @@ const Question = (props) => {
       <h1>{response && response.title}</h1>
       <p>{response && response.description}</p>
       <hr />
-      <AnswerForm />
+      <AnswerForm question={id} />
     </div>
   );
 };

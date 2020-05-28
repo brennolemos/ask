@@ -49,4 +49,15 @@ app.post('/to-ask', (req, res) => {
   })
 });
 
+app.post('/to-answer', (req, res) => {
+  const body = req.body.body;
+  const questionId = req.body.question;
+  Answer.create({
+    body,
+    questionId
+  }).then(() => {
+    res.send("Resposta cadastrada com sucesso!");
+  })
+})
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
